@@ -1,33 +1,40 @@
-# Astro Starter Kit: Minimal
+# Portfolio Website
 
-```sh
-npm create astro@latest -- --template minimal
-```
+A modern, fast portfolio website built with Astro and React.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## ✨ Features
+
+- ⚡ Built with Astro for optimal performance
+- ⚛️ React components for interactive elements
+- 🎨 Clean, modern design
+- 📱 Responsive layout
+- 🚀 Fast loading times with Astro's static site generation
 
 ## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
 
 ```text
 /
 ├── public/
+│   └── domLogo.svg
 ├── src/
+│   ├── components/
+│   │   ├── Logo.tsx
+│   │   └── nav.tsx
+│   ├── layouts/
+│   │   └── Layout.astro
 │   └── pages/
 │       └── index.astro
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- `src/pages/` - Astro pages that become routes
+- `src/components/` - React and Astro components
+- `src/layouts/` - Reusable layout components
+- `public/` - Static assets like images and icons
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## 🧞 Development Commands
 
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
+All commands are run from the root of the project:
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
@@ -38,6 +45,20 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## �️ Tech Stack
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- **Framework**: Astro
+- **Frontend**: React + TypeScript
+- **Styling**: CSS
+- **Build Tool**: Vite (via Astro)
+
+## 🚀 Getting Started
+
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Start the dev server: `npm run dev`
+4. Open `localhost:4321` in your browser
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
