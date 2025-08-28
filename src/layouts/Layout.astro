@@ -1,13 +1,25 @@
 ---
 import { Logo } from "../components/Logo"
+import { Navbar } from "../components/Navbar";
+import '../styles/globals.css';
 ---
 
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content={Astro.generator} />
         <title>Dominic Lim</title>
-        <link rel="icon" type="image/svg+xml" href="/domLogo.svg">
+        <meta name="description" content="Dom Lynsey's professional portfolio showcasing projects, skills, and experience." />
+        <link rel="icon" type="image/svg+xml" href="/domLogo.svg" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     </head>
-    <body>
-        
+    <body class="text-white font-poppins">
+        <Navbar client:load />
+        <main>
+            <slot />
+        </main>
     </body>
 </html>
