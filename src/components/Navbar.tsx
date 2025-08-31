@@ -182,13 +182,13 @@ export const Navbar = () => {
                 </div>
 
                 <div className='sm:hidden flex items-center gap-4'>
-                    <ThemeToggle isDarkMode={isDarkMode} onToggle={toggleDarkMode} />
-                    
                     <div style={menuIconStyle} onClick={() => setToggle(!toggle)}>
                         <span style={topBarStyle}></span>
                         <span style={middleBarStyle}></span>
                         <span style={bottomBarStyle}></span>
                     </div>
+                    
+                    <ThemeToggle isDarkMode={isDarkMode} onToggle={toggleDarkMode} />
 
                     <motion.div
                         className={`${
