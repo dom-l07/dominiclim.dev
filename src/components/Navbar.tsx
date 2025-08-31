@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-import { styles } from "../styles";
-import { navLinks } from "../constants";
+import { navLinks } from "../data";
 import { logo } from "../assets";
+import { ThemeToggle } from "./ui/ThemeToggle";
 
 export const Navbar = () => {
-    const [active, setActive] = useState("");
+    const [active, setActive] = useState("About");
     const [toggle, setToggle] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [isDarkMode, setIsDarkMode] = useState(false);
@@ -30,6 +30,15 @@ export const Navbar = () => {
         const checkDarkMode = () => {
             const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
             setIsDarkMode(isDark);
+            if (isDark) {
+                document.documentElement.classList.add('dark');
+                document.body.style.backgroundColor = '#050816';
+                document.body.style.color = 'white';
+            } else {
+                document.documentElement.classList.remove('dark');
+                document.body.style.backgroundColor = 'white';
+                document.body.style.color = 'black';
+            }
         };
 
         checkDarkMode();
@@ -37,6 +46,15 @@ export const Navbar = () => {
         const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
         const handleChange = (e: MediaQueryListEvent) => {
             setIsDarkMode(e.matches);
+            if (e.matches) {
+                document.documentElement.classList.add('dark');
+                document.body.style.backgroundColor = '#050816';
+                document.body.style.color = 'white';
+            } else {
+                document.documentElement.classList.remove('dark');
+                document.body.style.backgroundColor = 'white';
+                document.body.style.color = 'black';
+            }
         };
 
         mediaQuery.addEventListener('change', handleChange);
@@ -45,6 +63,21 @@ export const Navbar = () => {
             mediaQuery.removeEventListener('change', handleChange);
         };
     }, []);
+
+    const toggleDarkMode = () => {
+        const newDarkMode = !isDarkMode;
+        setIsDarkMode(newDarkMode);
+        
+        if (newDarkMode) {
+            document.documentElement.classList.add('dark');
+            document.body.style.backgroundColor = '#050816';
+            document.body.style.color = 'white';
+        } else {
+            document.documentElement.classList.remove('dark');
+            document.body.style.backgroundColor = 'white';
+            document.body.style.color = 'black';
+        }
+    };
 
     const menuIconStyle: React.CSSProperties = {
         position: 'relative',
@@ -58,7 +91,7 @@ export const Navbar = () => {
     };
 
     const barCommonStyle: React.CSSProperties = {
-        background: 'black',
+        background: isDarkMode ? 'white' : 'black',
         display: 'block',
         height: '2px',
         width: '18px',
@@ -92,7 +125,7 @@ export const Navbar = () => {
                 scrolled ? "bg-primary shadow-lg" : "bg-transparent"
             }`}
         >
-            <div className='w-full flex justify-start items-center max-w-7xl ml-5 gap-10'>
+            <div className='w-full flex justify-between items-center ml-5 mr-5'>
                 <a
                     href="#"
                     className='flex items-center gap-2'
@@ -121,7 +154,7 @@ export const Navbar = () => {
                 </motion.p>
                 </a>
 
-                <ul className='list-none hidden sm:flex flex-row gap-10'>
+                <ul className='list-none hidden sm:flex flex-row gap-10 absolute left-1/2 transform -translate-x-1/2'>
                 {navLinks.map((nav, index) => (
                     <motion.li
                         key={nav.id}
@@ -132,8 +165,10 @@ export const Navbar = () => {
                     <a
                         href={`#${nav.id}`}
                         className={`${
-                        active === nav.title ? "text-black" : "text-white"
-                        } hover:text-black text-[18px] font-medium cursor-pointer transition-colors duration-300`}
+                        active === nav.title 
+                            ? (isDarkMode ? "text-white" : "text-black")
+                            : (isDarkMode ? "text-gray-400" : "text-gray-600")
+                        } ${isDarkMode ? "hover:text-white" : "hover:text-black"} text-[18px] font-medium cursor-pointer transition-colors duration-300`}
                         onClick={() => setActive(nav.title)}
                     >
                         {nav.title}
@@ -142,7 +177,13 @@ export const Navbar = () => {
                 ))}
                 </ul>
 
-                <div className='sm:hidden flex items-center'>
+                <div className='hidden sm:flex'>
+                    <ThemeToggle isDarkMode={isDarkMode} onToggle={toggleDarkMode} />
+                </div>
+
+                <div className='sm:hidden flex items-center gap-4'>
+                    <ThemeToggle isDarkMode={isDarkMode} onToggle={toggleDarkMode} />
+                    
                     <div style={menuIconStyle} onClick={() => setToggle(!toggle)}>
                         <span style={topBarStyle}></span>
                         <span style={middleBarStyle}></span>
@@ -164,9 +205,11 @@ export const Navbar = () => {
                                 initial={{ opacity: 0, x: 20 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className={`font-poppins font-medium cursor-pointer text-[16px] ${
-                                    active === nav.title ? "text-black" : "text-gray-600"
-                                }`}
+                                className={`font-poppins font-medium cursor-pointer text-[16px] transition-colors duration-300 ${
+                                    active === nav.title 
+                                        ? (isDarkMode ? "text-white" : "text-black")
+                                        : (isDarkMode ? "text-gray-300" : "text-gray-600")
+                                } ${isDarkMode ? "hover:text-white" : "hover:text-black"}`}
                                 onClick={() => {
                                     setToggle(!toggle);
                                     setActive(nav.title);
