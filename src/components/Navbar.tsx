@@ -121,12 +121,12 @@ export const Navbar = () => {
 
     return (
         <nav
-            className="px-6 w-full flex items-center py-4 fixed top-0 z-50"
+            className="px-4 w-full flex items-center py-4 fixed top-0 z-50"
             style={{
                 backgroundColor: isDarkMode ? '#050816' : 'white'
             }}
         >
-            <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
+            <div className='w-full flex justify-between items-center'>
                 <a
                     href="#"
                     className='flex items-center gap-2'
@@ -146,13 +146,6 @@ export const Navbar = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0 }}
                 />
-                <motion.p 
-                    className='text-white text-[18px] font-bold cursor-pointer flex items-center'
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                >
-                </motion.p>
                 </a>
 
                 <ul className='list-none hidden sm:flex flex-row gap-10 absolute left-1/2 transform -translate-x-1/2'>
