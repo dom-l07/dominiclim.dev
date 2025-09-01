@@ -187,7 +187,11 @@ export const Navbar = () => {
                     <motion.div
                         className={`${
                         !toggle ? "hidden" : "flex"
-                        } p-6 absolute top-20 left-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+                        } p-6 absolute top-20 right-0 mx-4 my-2 min-w-[200px] z-10 rounded-xl shadow-lg`}
+                        style={{
+                            backgroundColor: isDarkMode ? '#1f2937' : 'white',
+                            border: isDarkMode ? '1px solid #374151' : '1px solid #e5e7eb'
+                        }}
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: toggle ? 1 : 0, scale: toggle ? 1 : 0.95 }}
                         transition={{ duration: 0.2 }}
