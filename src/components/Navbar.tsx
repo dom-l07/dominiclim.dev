@@ -121,11 +121,12 @@ export const Navbar = () => {
 
     return (
         <nav
-            className={`pl-4 w-full flex items-center my-1 py-5 fixed top-0 z-20 transition-all duration-300 ${
-                scrolled ? "bg-primary shadow-lg" : "bg-transparent"
-            }`}
+            className="px-6 w-full flex items-center py-4 fixed top-0 z-50"
+            style={{
+                backgroundColor: isDarkMode ? '#050816' : 'white'
+            }}
         >
-            <div className='w-full flex justify-between items-center ml-5 mr-5'>
+            <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
                 <a
                     href="#"
                     className='flex items-center gap-2'
