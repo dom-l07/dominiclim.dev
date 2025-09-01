@@ -13,7 +13,29 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-.black-gradient {
-  background: linear-gradient(90deg, #161030 0%, rgba(60, 51, 80, 0) 100%);
-  background: -webkit-linear-gradient(90deg, #161030 0%, rgba(60, 51, 80, 0) 100%);
+.logo-fill {
+    fill: #000000;
+    transition: fill 0.3s ease;
+}
+
+.dark .logo-fill {
+    fill: white;
+}
+
+.name-highlight {
+    color: #1d4ed8;
+    transition: color 0.3s ease;
+}
+
+.dark .name-highlight {
+    color: #60a5fa;
+}
+
+.description-text {
+    color: #4b5563;
+    transition: color 0.3s ease;
+}
+
+.dark .description-text {
+    color: #d1d5db;
 }
