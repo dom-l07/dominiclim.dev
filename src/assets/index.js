@@ -7,13 +7,15 @@ import html from "./technologies/html.png";
 import css from "./technologies/css.png";
 import javascript from "./technologies/javascript.png";
 import python from "./technologies/python.png";
+import mysql from "./technologies/mysql.png";
+import mongodb from "./technologies/mongodb.png";
+import typescript from "./technologies/typescript.png";
+import aws from "./technologies/aws.png";
 
 import openedg from "./certifications/openedg.png";
 
-const mysql = html;
-const mongodb = html;
-const typescript = html;
-const aws = html;
+import portfolioWebsite from "./projectsImg/portfolioWebsite.png";
+import kineGit from "./projectsImg/kineGit.png";
 
 export {
     logo,
@@ -30,5 +32,8 @@ export {
     typescript,
     aws,
     
-    openedg
+    openedg,
+    
+    portfolioWebsite,
+    kineGit
 };
