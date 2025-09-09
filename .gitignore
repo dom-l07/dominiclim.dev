@@ -17,9 +17,6 @@ pnpm-debug.log*
 .env
 .env.production
 
-# emailjs configuration
-src/config/emailjs.ts
-
 # macOS-specific files
 .DS_Store
 
