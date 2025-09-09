@@ -29,9 +29,7 @@ export interface Certification {
 }
 
 export interface Project {
-    // Add project properties when you have projects
     title?: string;
     description?: string;
     technologies?: string[];
-    // etc.
 }
