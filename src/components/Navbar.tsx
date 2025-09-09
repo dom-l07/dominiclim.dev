@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-import { navLinks } from "../data";
-import { logo } from "../assets";
+import { navLinks } from "../data/index.js";
+import { logo } from "../assets/index.js";
 import { ThemeToggle } from "./ui/ThemeToggle";
 
 export const Navbar = () => {
