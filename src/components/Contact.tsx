@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import { emailjsConfig } from '../config/emailjs.js';
 
@@ -18,6 +18,18 @@ export const Contact: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
+  useEffect(() => {
+    console.log('EmailJS Config:', emailjsConfig);
+    console.log('Environment variables:', {
+      serviceId: import.meta.env.PUBLIC_EMAILJS_SERVICE_ID,
+      templateId: import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID,
+      publicKey: import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY
+    });
+    
+    emailjs.init(emailjsConfig.publicKey);
+    console.log('EmailJS initialized with public key:', emailjsConfig.publicKey);
+  }, []);
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -30,7 +42,29 @@ export const Contact: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
+    // Validate form
+    if (!formData.name || !formData.email || !formData.message) {
+      console.error('Form validation failed - missing fields');
+      setSubmitStatus('error');
+      setIsSubmitting(false);
+      setTimeout(() => setSubmitStatus('idle'), 5000);
+      return;
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      console.error('Invalid email format');
+      setSubmitStatus('error');
+      setIsSubmitting(false);
+      setTimeout(() => setSubmitStatus('idle'), 5000);
+      return;
+    }
+    
     try {
+      console.log('Starting email send process...');
+      console.log('Current config:', emailjsConfig);
+      
       const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
@@ -38,21 +72,40 @@ export const Contact: React.FC = () => {
         to_name: 'Dominic Lim',
       };
 
-      await emailjs.send(
+      console.log('Template params:', templateParams);
+
+      const result = await emailjs.send(
         emailjsConfig.serviceId,
         emailjsConfig.templateId,
         templateParams,
         emailjsConfig.publicKey
       );
       
+      console.log('EmailJS success result:', result);
       setSubmitStatus('success');
       setFormData({ name: '', email: '', message: '' });
-    } catch (error) {
+    } catch (error: any) {
       console.error('EmailJS error:', error);
+      console.error('Error details:', {
+        message: error.message,
+        text: error.text,
+        status: error.status,
+        name: error.name
+      });
+      
+      // More specific error handling
+      if (error.message?.includes('Invalid user ID')) {
+        console.error('Invalid EmailJS user ID/public key');
+      } else if (error.message?.includes('Invalid service ID')) {
+        console.error('Invalid EmailJS service ID');
+      } else if (error.message?.includes('Invalid template ID')) {
+        console.error('Invalid EmailJS template ID');
+      }
+      
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
-      setTimeout(() => setSubmitStatus('idle'), 3000);
+      setTimeout(() => setSubmitStatus('idle'), 5000);
     }
   };
 

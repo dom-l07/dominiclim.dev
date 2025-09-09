@@ -1,5 +1,5 @@
 export const emailjsConfig = {
-  serviceId: import.meta.env.EMAILJS_SERVICE_ID || "your-service-id",
-  templateId: import.meta.env.EMAILJS_TEMPLATE_ID || "your-template-id",
-  publicKey: import.meta.env.EMAILJS_PUBLIC_KEY || "your-public-key",
+  serviceId: import.meta.env.PUBLIC_EMAILJS_SERVICE_ID || "service_l3db7pk",
+  templateId: import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID || "template_c5lgx34",
+  publicKey: import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY || "lTTGZPQvSrF3GdCyp",
 };
