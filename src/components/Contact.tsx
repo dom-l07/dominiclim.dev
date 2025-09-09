@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
-import { emailjsConfig } from '../config/emailjs.ts';
+import { emailjsConfig } from '../config/emailjs';
 
 interface FormData {
   name: string;
