@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "title": "dominiclim.dev",
+    "description": "A modern, responsive portfolio website built with Astro, React, and TypeScript. Features smooth animations, dark mode support, and an infinite scrolling certification carousel.",
+    "technologies": ["Astro", "React", "TypeScript", "Tailwind CSS"],
+    "github": "https://github.com/dom-l07/portfolioWebsite",
+    "demo": "https://www.dominiclim.dev",
+    "image": "/assets/projectsImg/portfolioWebsite.png"
+  },
+  {
+    "title": "KineGit",
+    "description": "A fictional gym website called 'KineGit' that allows people to register and start booking classes!",
+    "technologies": ["MySQL", "Bootstrap 5.3.3", "HTML", "CSS", "Javascript"],
+    "github": "https://github.com/dom-l07/KineGit",
+    "demo": "https://kinegit.onrender.com",
+    "image": "/assets/projectsImg/kineGit.png"
+  }
+]

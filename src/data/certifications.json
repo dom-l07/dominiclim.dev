@@ -3,7 +3,13 @@
         "title": "Certified Entry-Level Python Programmer",
         "type": "Professional Certificate",
         "icon": "openedg",
-        "date": "Nov 2024",
-        "credential": "openedg"
+        "dateOfIssue": "Nov 2024",
+        "credential": "https://verify.openedg.org/?id=Rvqk.NWc3.T5a7",
+        "Skills": [
+            "Python programming fundamentals and data structures",
+            "Debugging and exception handling strategies",
+            "Clean code following PEP 8 best practices",
+            "Scripting and automation for cloud workflows"
+        ]
     }
 ]
