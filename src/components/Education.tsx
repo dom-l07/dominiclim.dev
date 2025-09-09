@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
-import educationData from '../data/education.json';
+import { education } from '../data/index.js';
 
 interface EducationItem {
   title: string;
   institution_name: string;
   link: string;
   date: string;
-  logo: string;
+  logo: string | { src: string };
   awards?: string[];
   positions?: string[];
   events?: string[];
@@ -111,7 +111,7 @@ const EducationCard: React.FC<EducationCardProps> = ({ education, index, isLeft 
           <div className="flex items-start gap-3 sm:gap-4 mb-4">
             <div className="flex-shrink-0">
               <img
-                src={`/src/assets/educations/${education.logo}.png`}
+                src={typeof education.logo === 'string' ? education.logo : education.logo.src}
                 alt={`${education.institution_name} logo`}
                 className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg object-cover"
                 onError={(e) => {
@@ -221,10 +221,10 @@ export const Education: React.FC = () => {
           <TimelineProgress progress={timelineProgress} />
           
           <div className="space-y-8 md:space-y-16">
-            {educationData.map((education, index) => (
+            {education.map((educationItem, index) => (
               <EducationCard
                 key={index}
-                education={education}
+                education={educationItem}
                 index={index}
                 isLeft={index % 2 === 0}
               />

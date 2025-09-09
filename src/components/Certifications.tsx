@@ -1,10 +1,10 @@
 import React, { useRef, useState, useEffect } from 'react';
-import certificationsData from '../data/certifications.json';
+import { certifications } from '../data/index.js';
 
 interface CertificationItem {
   title: string;
   type: string;
-  icon: string;
+  icon: string | { src: string };
   dateOfIssue: string;
   credential: string;
   Skills?: string[];
@@ -23,13 +23,14 @@ const CertificationCard: React.FC<CertificationCardProps> = ({ certification, in
     return () => clearTimeout(timer);
   }, [index]);
 
-  const getIconComponent = (iconName: string) => {
+  const getIconComponent = (icon: string | { src: string }) => {
+    const iconSrc = typeof icon === 'string' ? icon : icon.src;
     return (
       <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 p-0.5 shadow-lg">
         <div className="w-full h-full rounded-2xl bg-white dark:bg-gray-800 flex items-center justify-center">
           <img
-            src={`/src/assets/certifications/${iconName}.png`}
-            alt={`${iconName} certification`}
+            src={iconSrc}
+            alt="Certification icon"
             className="w-full h-full object-contain rounded-2xl"
             onError={(e) => {
               const target = e.target as HTMLImageElement;
@@ -37,7 +38,7 @@ const CertificationCard: React.FC<CertificationCardProps> = ({ certification, in
               if (target.parentElement) {
                 target.parentElement.innerHTML = `
                   <div class="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
-                    <span class="text-white font-bold text-sm uppercase">${iconName}</span>
+                    <span class="text-white font-bold text-sm uppercase">CERT</span>
                   </div>
                 `;
               }
@@ -49,7 +50,7 @@ const CertificationCard: React.FC<CertificationCardProps> = ({ certification, in
   };
 
   return (
-        <div 
+    <div 
       className={`group relative flex-shrink-0 w-80 sm:w-96 h-[500px] transform transition-all duration-700 ${
         isVisible 
           ? 'translate-y-0 opacity-100' 
@@ -134,11 +135,11 @@ export const Certifications: React.FC = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const infiniteCertifications = [
-    ...certificationsData,
-    ...certificationsData,
-    ...certificationsData
+    ...certifications,
+    ...certifications,
+    ...certifications
   ];
-  const originalLength = certificationsData.length;
+  const originalLength = certifications.length;
 
   const handleInfiniteScroll = () => {
     if (scrollContainerRef.current && !isTransitioning) {

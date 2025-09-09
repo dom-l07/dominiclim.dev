@@ -41,7 +41,7 @@ export const technologies = technologiesData.map(item => ({
 export const certifications = certificationsData.map(item => ({
     ...item,
     icon: assetMap[item.icon],
-    credential: assetMap[item.credential]
+    credential: item.credential
 }));
 
 export const projects = projectsData;

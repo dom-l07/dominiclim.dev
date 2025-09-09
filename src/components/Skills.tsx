@@ -1,9 +1,9 @@
 import React from 'react';
-import technologiesData from '../data/technologies.json';
+import { technologies } from '../data/index.js';
 
 interface Technology {
   name: string;
-  icon: string;
+  icon: string | { src: string };
 }
 
 interface SkillCardProps {
@@ -12,13 +12,14 @@ interface SkillCardProps {
 }
 
 const SkillCard: React.FC<SkillCardProps> = ({ technology, index }) => {
-  const getIconComponent = (iconName: string) => {
+  const getIconComponent = (icon: string | { src: string }) => {
+    const iconSrc = typeof icon === 'string' ? icon : icon.src;
     return (
       <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 p-0.5 shadow-lg">
         <div className="w-full h-full rounded-2xl bg-white dark:bg-gray-800 flex items-center justify-center">
           <img
-            src={`/src/assets/technologies/${iconName}.png`}
-            alt={`${iconName} technology`}
+            src={iconSrc}
+            alt="Technology icon"
             className="w-10 h-10 object-contain"
             onError={(e) => {
               const target = e.target as HTMLImageElement;
@@ -26,7 +27,7 @@ const SkillCard: React.FC<SkillCardProps> = ({ technology, index }) => {
               if (target.parentElement) {
                 target.parentElement.innerHTML = `
                   <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
-                    <span class="text-white font-bold text-xs uppercase">${iconName.slice(0, 2)}</span>
+                    <span class="text-white font-bold text-xs uppercase">??</span>
                   </div>
                 `;
               }
@@ -75,7 +76,7 @@ export const Skills: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          {technologiesData.map((technology, index) => (
+          {technologies.map((technology, index) => (
             <SkillCard
               key={technology.name}
               technology={technology}
