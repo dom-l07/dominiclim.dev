@@ -6,14 +6,12 @@ import {
     openedg
 } from "../assets";
 
-// Import JSON data
 import navigationData from "./navigation.json";
 import educationData from "./education.json";
 import technologiesData from "./technologies.json";
 import certificationsData from "./certifications.json";
 import projectsData from "./projects.json";
 
-// Asset mapping for icons/logos
 const assetMap: Record<string, any> = {
     republicpoly,
     northlandss,
@@ -28,7 +26,6 @@ const assetMap: Record<string, any> = {
     openedg
 };
 
-// Transform data to include actual asset references
 export const navLinks = navigationData;
 
 export const education = educationData.map(item => ({
@@ -49,5 +46,4 @@ export const certifications = certificationsData.map(item => ({
 
 export const projects = projectsData;
 
-// Export individual data for specific imports
 export { navigationData, educationData, technologiesData, certificationsData, projectsData };
