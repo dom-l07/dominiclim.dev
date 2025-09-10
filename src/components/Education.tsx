@@ -18,7 +18,7 @@ interface TimelineProgressProps {
 
 const TimelineProgress: React.FC<TimelineProgressProps> = ({ progress }) => {
   return (
-    <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gray-300 dark:bg-gray-600 h-full">
+    <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-gray-300 dark:bg-gray-600 h-full">
       <div 
         className="w-full bg-blue-600 dark:bg-blue-400 transition-all duration-300 ease-out"
         style={{ height: `${progress}%` }}
@@ -94,7 +94,7 @@ const EducationCard: React.FC<EducationCardProps> = ({ education, index, isLeft 
         isLeft ? 'md:justify-start justify-center' : 'md:justify-end justify-center'
       }`}
     >
-      <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 dark:bg-blue-400 rounded-full border-4 border-white dark:border-gray-900 z-10" />
+      <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 dark:bg-blue-400 rounded-full border-4 border-white dark:border-gray-900 z-10" />
       
       <div
         className={`w-full md:w-5/12 px-4 md:px-0 ${
