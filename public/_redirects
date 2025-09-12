@@ -1,0 +1,6 @@
+# Redirect apex domain to www subdomain
+https://dominiclim.dev/* https://www.dominiclim.dev/:splat 301!
+http://dominiclim.dev/* https://www.dominiclim.dev/:splat 301!
+
+# Ensure HTTPS for www subdomain
+http://www.dominiclim.dev/* https://www.dominiclim.dev/:splat 301!

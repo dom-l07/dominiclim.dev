@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "dominiclim.dev"
+        }
+      ],
+      "destination": "https://www.dominiclim.dev/$1",
+      "permanent": true
+    }
+  ]
+}
