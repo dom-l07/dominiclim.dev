@@ -12,7 +12,7 @@
     "description": "A fictional gym website called 'KineGit' that allows people to register and start booking classes!",
     "technologies": ["MySQL", "Bootstrap 5.3.3", "HTML", "CSS", "Javascript"],
     "github": "https://github.com/dom-l07/KineGit",
-    "demo": "https://kinegit.onrender.com",
+    "demo": "https://kinegit.vercel.app/",
     "image": "/assets/projectsImg/kineGit.png"
   }
 ]
