@@ -19,7 +19,7 @@ export const Hero: React.FC = () => {
             <span className="invisible whitespace-nowrap">I'm a Aspiring Software Engineer</span>
             <div className="absolute inset-0 whitespace-nowrap">
               I'm a <TypingAnimation 
-                words={["Student", "Aspiring Software Engineer", "Problem Solver", "Challenge Seeker", "Innovation Driven"]}
+                words={["Student", "Aspiring Software Engineer", "Problem Solver", "Challenge Seeker", "Seeker of Innovative Solutions"]}
               />
             </div>
           </div>
