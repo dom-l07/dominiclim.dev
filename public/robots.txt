@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Crawl delay to be respectful
+Crawl-delay: 1
 
 Sitemap: https://www.dominiclim.dev/sitemap.xml
