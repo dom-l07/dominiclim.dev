@@ -13,6 +13,8 @@ import typescript from "./technologies/typescript.png";
 import aws from "./technologies/aws.png";
 
 import openedg from "./certifications/openedg.png";
+import dstaBrainHack from "./certifications/dstaBrainHack.png";
+import hackerRank from "./certifications/hackerRank.png";
 
 import portfolioWebsite from "./projectsImg/portfolioWebsite.png";
 import kineGit from "./projectsImg/kineGit.png";
@@ -33,6 +35,8 @@ export {
     aws,
     
     openedg,
+    dstaBrainHack,
+    hackerRank,
     
     portfolioWebsite,
     kineGit

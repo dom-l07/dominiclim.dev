@@ -11,5 +11,50 @@
             "Clean code following PEP 8 best practices",
             "Scripting and automation for cloud workflows"
         ]
+    },
+    {
+        "title": "DSTA BrainHack 2025",
+        "type": "Certificate of Participation",
+        "icon": "dstaBrainHack",
+        "dateOfIssue": "Jul 2025",
+        "credential": "https://certificates.nextid.com/certificate?id=4c5694b0-21a1-4eac-8c03-82435e7b3ef4",
+        "Skills": [
+            "UI/UX Design using Figma",
+            "Innovate ideas to solve problem statement",
+            "Showcased app functions and pitched to judges"
+        ]
+    },
+    {
+        "title": "Python (Basic)",
+        "type": "Certificate of Accomplishment",
+        "icon": "hackerRank",
+        "dateOfIssue": "Oct 2025",
+        "credential": "https://www.hackerrank.com/certificates/iframe/874ac615c23b",
+        "Skills": [
+            "Certifies proficiency in core Python programming concepts such as data types, conditionals, loops, functions, and error handling",
+            "Highlights the ability to write clean, efficient Python code and solve common algorithmic problems"
+        ]
+    },
+    {
+        "title": "React (Basic)",
+        "type": "Certificate of Accomplishment",
+        "icon": "hackerRank",
+        "dateOfIssue": "Oct 2025",
+        "credential": "https://www.hackerrank.com/certificates/iframe/a2322282a6c4",
+        "Skills": [
+            "Validates fundamental understanding of React.js concepts",
+            "Demonstrates the ability to build simple, interactive user interfaces and apply React best pratices in modern web development"
+        ]
+    },
+    {
+        "title": "SQL (Advanced)",
+        "type": "Certificate of Accomplishment",
+        "icon": "hackerRank",
+        "dateOfIssue": "Oct 2025",
+        "credential": "https://www.hackerrank.com/certificates/iframe/d625e1431b4e",
+        "Skills": [
+            "Verifies strong expertise in database querying and management",
+            "Demonstrates the ability to design optimized SQL queries and analyze data efficiently"
+        ]
     }
 ]

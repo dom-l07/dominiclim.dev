@@ -3,7 +3,9 @@ import {
     html, css, javascript,
     python, mysql, mongodb, typescript,
     aws,
-    openedg
+    openedg,
+    dstaBrainHack,
+    hackerRank
 } from "../assets";
 
 import navigationData from "./navigation.json";
@@ -23,7 +25,9 @@ const assetMap: Record<string, any> = {
     mongodb,
     typescript,
     aws,
-    openedg
+    openedg,
+    dstaBrainHack,
+    hackerRank
 };
 
 export const navLinks = navigationData;
