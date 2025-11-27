@@ -18,6 +18,7 @@ import hackerRank from "./certifications/hackerRank.png";
 
 import portfolioWebsite from "./projectsImg/portfolioWebsite.png";
 import kineGit from "./projectsImg/kineGit.png";
+import ocbcVTM from "./projectsImg/ocbcVTM.png";
 
 export {
     logo,
@@ -39,5 +40,6 @@ export {
     hackerRank,
     
     portfolioWebsite,
-    kineGit
+    kineGit,
+    ocbcVTM
 };
