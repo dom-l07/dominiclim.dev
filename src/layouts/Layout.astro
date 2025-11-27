@@ -1,6 +1,12 @@
 ---
 import { Navbar } from "../components/Navbar";
 import '../styles/globals.css';
+
+const siteTitle = "Dominic Lim | Software Developer & Student Portfolio";
+const siteDescription = "Dominic Lim - Aspiring Software Engineer passionate about coding, problem-solving, and building innovative web applications. Explore my projects, skills in Python, TypeScript, React, and more.";
+const siteUrl = "https://www.dominiclim.dev";
+const siteImage = `${siteUrl}/photoOfMe.jpg`;
+const keywords = "Dominic Lim, software developer, web developer, portfolio, Python, TypeScript, JavaScript, React, Astro, Singapore developer, student developer, full stack developer";
 ---
 
 <!DOCTYPE html>
@@ -10,58 +16,114 @@ import '../styles/globals.css';
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="generator" content={Astro.generator} />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-        <title>Dominic Lim</title>
-        <meta name="description" content="I am passionate about coding, solving complex problems, and building useful projects that make a difference! " />
-        <link rel="icon" type="image/svg+xml" href="/domLogo.svg" />
-        <link rel="canonical" href="https://www.dominiclim.dev/" />
+        <meta name="googlebot" content="index, follow" />
         
+        <!-- Primary Meta Tags -->
+        <title>{siteTitle}</title>
+        <meta name="title" content={siteTitle} />
+        <meta name="description" content={siteDescription} />
+        <meta name="keywords" content={keywords} />
+        <meta name="author" content="Dominic Lim" />
+        <meta name="theme-color" content="#3B82F6" />
+        
+        <!-- Favicon -->
+        <link rel="icon" type="image/svg+xml" href="/domLogo.svg" />
+        <link rel="apple-touch-icon" href="/domLogo.svg" />
+        
+        <!-- Canonical URL -->
+        <link rel="canonical" href={siteUrl} />
+        
+        <!-- Open Graph / Facebook -->
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.dominiclim.dev/" />
-        <meta property="og:title" content="Dominic Lim" />
-        <meta property="og:description" content="I am passionate about coding, solving complex problems, and building useful projects that make a difference!" />
-        <meta property="og:image" content="https://www.dominiclim.dev/domLogo.svg" />
+        <meta property="og:url" content={siteUrl} />
+        <meta property="og:title" content={siteTitle} />
+        <meta property="og:description" content={siteDescription} />
+        <meta property="og:image" content={siteImage} />
+        <meta property="og:image:alt" content="Dominic Lim - Software Developer" />
         <meta property="og:site_name" content="Dominic Lim Portfolio" />
+        <meta property="og:locale" content="en_US" />
 
+        <!-- Twitter -->
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://www.dominiclim.dev/" />
-        <meta name="twitter:title" content="Dominic Lim" />
-        <meta name="twitter:description" content="I am passionate about coding, solving complex problems, and building useful projects that make a difference!" />
-        <meta name="twitter:image" content="https://www.dominiclim.dev/domLogo.svg" />
+        <meta name="twitter:url" content={siteUrl} />
+        <meta name="twitter:title" content={siteTitle} />
+        <meta name="twitter:description" content={siteDescription} />
+        <meta name="twitter:image" content={siteImage} />
+        <meta name="twitter:image:alt" content="Dominic Lim - Software Developer" />
 
+        <!-- Structured Data - Person -->
         <script type="application/ld+json">
         {
           "@context": "https://schema.org",
           "@type": "Person",
+          "@id": "https://www.dominiclim.dev/#person",
           "name": "Dominic Lim",
+          "givenName": "Dominic",
+          "familyName": "Lim",
           "url": "https://www.dominiclim.dev",
-          "logo": "https://www.dominiclim.dev/domLogo.svg",
-          "image": "https://www.dominiclim.dev/domLogo.svg",
-          "description": "I am passionate about coding, solving complex problems, and building useful projects that make a difference!",
-          "jobTitle": "Software Developer",
+          "image": "https://www.dominiclim.dev/photoOfMe.jpg",
+          "description": "Aspiring Software Engineer passionate about coding, problem-solving, and building innovative web applications.",
+          "jobTitle": "Aspiring Software Engineer",
+          "knowsAbout": ["Python", "TypeScript", "JavaScript", "React", "Astro", "Web Development", "Software Development"],
           "sameAs": [
             "https://github.com/dom-l07",
-            "https://linkedin.com/in/dominiclim07"
-          ]
+            "https://www.linkedin.com/in/domljl"
+          ],
+          "email": "mailto:domljl07@gmail.com"
         }
         </script>
 
+        <!-- Structured Data - WebSite -->
         <script type="application/ld+json">
         {
           "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "Dominic Lim",
+          "@type": "WebSite",
+          "@id": "https://www.dominiclim.dev/#website",
           "url": "https://www.dominiclim.dev",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://www.dominiclim.dev/domLogo.svg",
-            "width": "512",
-            "height": "512"
+          "name": "Dominic Lim Portfolio",
+          "description": "Personal portfolio website of Dominic Lim - Aspiring Software Engineer",
+          "publisher": {
+            "@id": "https://www.dominiclim.dev/#person"
           },
-          "founder": {
-            "@type": "Person",
-            "name": "Dominic Lim"
+          "inLanguage": "en-US"
+        }
+        </script>
+
+        <!-- Structured Data - WebPage -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "@id": "https://www.dominiclim.dev/#webpage",
+          "url": "https://www.dominiclim.dev",
+          "name": "Dominic Lim | Software Developer & Student Portfolio",
+          "description": "Explore Dominic Lim's portfolio featuring projects, skills, certifications, and contact information.",
+          "isPartOf": {
+            "@id": "https://www.dominiclim.dev/#website"
           },
-          "description": "Portfolio website of Dominic Lim - Software Developer passionate about coding and building useful projects."
+          "about": {
+            "@id": "https://www.dominiclim.dev/#person"
+          },
+          "mainEntity": {
+            "@id": "https://www.dominiclim.dev/#person"
+          },
+          "inLanguage": "en-US"
+        }
+        </script>
+
+        <!-- Structured Data - BreadcrumbList -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.dominiclim.dev"
+            }
+          ]
         }
         </script>
     </head>

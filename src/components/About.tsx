@@ -2,15 +2,17 @@ import React from 'react';
 
 export const About: React.FC = () => {
   return (
-    <section id="about" className="min-h-screen flex items-center justify-center px-4 sm:px-6">
+    <section id="about" aria-label="About Dominic Lim" className="min-h-screen flex items-center justify-center px-4 sm:px-6">
       <div className="flex flex-col lg:flex-row items-center justify-center gap-6 sm:gap-8 lg:gap-16 max-w-6xl w-full">
-        <div className="flex-shrink-0">
+        <figure className="flex-shrink-0">
           <img 
-            src="/samplePortrait.png" 
-            alt="Dominic Lim Portrait" 
-            className="h-48 w-48 sm:h-64 sm:w-64 md:h-80 md:w-80 lg:h-96 lg:w-96 rounded-full object-cover shadow-2xl"
+            src="/photoOfMe.jpg" 
+            alt="Dominic Lim - Aspiring Software Engineer and Student Developer" 
+            className="h-48 w-48 sm:h-64 sm:w-64 md:h-80 md:w-80 lg:h-96 lg:w-96 rounded-3xl object-cover shadow-2xl"
+            loading="eager"
+            decoding="async"
           />
-        </div>
+        </figure>
         
         <div className="text-center lg:text-left space-y-6">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900 dark:text-white">

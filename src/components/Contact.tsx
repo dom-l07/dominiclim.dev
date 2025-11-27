@@ -110,7 +110,7 @@ export const Contact: React.FC = () => {
   ];
 
   return (
-    <section id="contact" className="py-16 sm:py-24 px-4 sm:px-6 relative">
+    <section id="contact" aria-label="Contact Dominic Lim" className="py-16 sm:py-24 px-4 sm:px-6 relative">
       <div className="max-w-7xl mx-auto relative">
         <div className="text-center mb-20">
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 dark:from-white dark:via-blue-100 dark:to-purple-100 bg-clip-text text-transparent mb-6">

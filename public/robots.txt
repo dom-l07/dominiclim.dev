@@ -1,10 +1,17 @@
 User-agent: *
 Allow: /
+
+# Disallow unnecessary paths
 Disallow: /api/
-Disallow: /_next/
+Disallow: /_astro/
 Disallow: /admin/
 
-# Crawl delay to be respectful
-Crawl-delay: 1
+# Allow all crawlers for main content
+User-agent: Googlebot
+Allow: /
 
+User-agent: Bingbot
+Allow: /
+
+# Sitemap location
 Sitemap: https://www.dominiclim.dev/sitemap.xml

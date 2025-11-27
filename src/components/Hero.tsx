@@ -5,7 +5,7 @@ import { ScrollIndicator } from './ui/ScrollIndicator';
 
 export const Hero: React.FC = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 -mt-8 sm:-mt-12 md:-mt-16 relative">
+    <section aria-label="Hero introduction" className="min-h-screen flex items-center justify-center px-4 sm:px-6 -mt-8 sm:-mt-12 md:-mt-16 relative">
       <div className="flex flex-col lg:flex-row items-center justify-center gap-6 sm:gap-8 lg:gap-16 max-w-6xl w-full">
         <div className="flex-shrink-0">
           <Logo className="h-48 w-48 sm:h-64 sm:w-64 md:h-80 md:w-80 lg:h-96 lg:w-96" />
