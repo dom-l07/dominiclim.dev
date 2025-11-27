@@ -94,8 +94,8 @@ export const Contact: React.FC = () => {
         </svg>
       ),
       title: 'GitHub',
-      value: 'github.com/dom-l07',
-      href: 'https://github.com/dom-l07'
+      value: 'github.com/domljl',
+      href: 'https://github.com/domljl'
     },
     {
       icon: (
